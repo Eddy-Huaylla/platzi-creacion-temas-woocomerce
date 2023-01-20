@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
+	<head>
+		<meta charset="<?php bloginfo("charset") ?>">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<?php wp_head(); ?>
+	</head>
 
-<head>
-	<meta charset="<?php bloginfo("charset") ?>">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<?php wp_head(); ?>
-</head>
+	<body <?php body_class(); ?>>
+		<?php wp_body_open(); ?>
+		<?php do_action( 'storefront_before_site' ); ?>
+		<?php do_action( 'storefront_before_header' ); ?>
 
-<body>
+		<?php get_template_part('template-parts/content','header'); ?>
 
-	<?php
-	wp_body_open();
+		<?php do_action( 'storefront_before_content' ); ?>
+		<div id="content" class="site-content" tabindex="-1">
+			<div class="col-full">
 
-	get_template_part('template-parts/content','header');
-	?>
-
-	<main class="productos">
-		<div class="container-fluid gx-5">
+			<?php
+			do_action( 'storefront_content_top' );
