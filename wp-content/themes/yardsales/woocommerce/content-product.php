@@ -41,6 +41,10 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 */
 	do_action( 'woocommerce_before_shop_loop_item_title' );
 
+
+
+	echo '<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide" /> ';
+
 	/**
 	 * Hook: woocommerce_shop_loop_item_title.
 	 *
