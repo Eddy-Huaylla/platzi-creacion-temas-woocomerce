@@ -16,3 +16,8 @@ Text Domain: yardsale storefront child
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
+
+.productos__ws img {
+	width: 30px;
+	border-radius: 0px;
+}

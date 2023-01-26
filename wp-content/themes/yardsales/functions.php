@@ -133,4 +133,18 @@ function plz_add_to_cart(){
 	<?php
 }
 
-add_action("woocommerce_after_shop_loop_item","plz_add_to_cart",10);
+add_action( "woocommerce_after_shop_loop_item", "plz_add_to_cart", 10 );
+
+
+# Add btn wp
+
+function plz_ws_share(){
+	global $product;
+	?>
+		<a   href="https://wa.me/549111111111111?text=Quisiera%20consultar%20sobre%20este%20producto: <?php echo $product->get_permalink();?>" target = "_blank" class = "productos__ws">
+			<img src  = "<?php echo get_stylesheet_directory_uri();?>/assets/img/ws.svg" alt                                                                = "whatsapps">
+		</a>
+	<?php
+}
+
+add_action( "woocommerce_after_shop_loop_item", "plz_ws_share", 11 );
