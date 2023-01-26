@@ -118,3 +118,19 @@ function plz_add_to_signin_menu(){
 }
 
 add_action("plz_signin","plz_add_to_signin_menu");
+
+
+# Personalizar boton add to cart
+
+remove_action("woocommerce_after_shop_loop_item","woocommerce_template_loop_add_to_cart",10);
+
+function plz_add_to_cart(){
+	global $product;
+	?>
+		<a href="<?php echo $product->add_to_cart_url();?>" class="productos__add-to-cart">
+			<img src="<?php echo get_stylesheet_directory_uri();?>/assets/img/add-to-cart.svg" alt="agragar al carrito">
+		</a>
+	<?php
+}
+
+add_action("woocommerce_after_shop_loop_item","plz_add_to_cart",10);
