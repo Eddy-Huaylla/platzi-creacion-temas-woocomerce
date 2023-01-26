@@ -20,7 +20,7 @@
 				<a href="<?= home_url("sign-in"); ?>" class="encabezado_sign-in">
 					<?= do_action("plz_signin"); ?>
 				</a>
-				<a href="#" class="encabezado__link active">
+				<a href="<?php echo wc_get_cart_url();?>" class="encabezado__link active">
 					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/header-empty-card.svg" alt="cart">
 				</a>
 			</div>
